@@ -7,3 +7,126 @@ def validar(direccion):
         print("Dirección inválida")
 validar(direccion)
 #2
+def sumaDigitos(numero): 
+    suma=0 
+    while numero!=0: 
+        digito=numero%10 
+        suma=suma+digito 
+        numero=numero//10 
+    return suma 
+num=int(input("Número a procesar: ")) 
+while num!=0:
+    print("Suma:",sumaDigitos(num)) 
+    num=int(input("Número a procesar: "))
+#3
+def primo(num): 
+   for i in range(2,num): 
+       if num%i==0:            
+           return False 
+   return True 
+numero=int(input("Número: "))
+numero1=numero
+if primo(numero)==True: 
+    print("el "+str(numero1)+" es un número primo") 
+else: 
+    print("el "+str(numero1)+" NO es un número primo") 
+#4
+def sumaDigitos(numero): 
+    suma=0 
+    while numero!=0:  
+        digito=numero%10 
+        suma=suma+digito 
+        numero=numero//10 
+    return suma 
+sumatoria=0 
+num=int(input("Número a procesar: ")) 
+while num!=0: 
+    print("Suma:",sumaDigitos(num)) 
+    sumatoria=sumatoria+num 
+    num=int(input("Número a procesar: ")) 
+print("Sumatoria:", sumatoria) 
+print("Dígitos:", sumaDigitos(sumatoria)) 
+#5
+def frecuencia(numero,digito): 
+   cantidad=0 
+   while numero!=0: 
+       ultDigito=numero%10 
+       if ultDigito==digito: 
+           cantidad+=1 
+       numero=numero//10 
+   return cantidad 
+num=int(input("Número: ")) 
+un_digito=int(input("Dígito: ")) 
+print("Frecuencia del dígito en el número:",frecuencia(num,un_digito)) 
+#6
+def factorial(numero): 
+   f=1 
+   if numero!=0: 
+       for i in range(1,numero+1): 
+           f=f*i 
+   return f
+cantidad=0 
+num=int(input("Número (-1 para cortar): ")) 
+while num!=-1: 
+    print("Factorial:", factorial(num)) 
+    cantidad+=1 
+    num=int(input("Número (-1 para cortar): ")) 
+print("Se leyeron",cantidad,"números") 
+#7
+def sumaDigitos(numero): 
+  suma=0 
+  while numero!=0: 
+      digito=numero%10 
+      suma=suma+digito 
+      numero=numero//10 
+  return suma 
+cantidad=0 
+mayor=-1 
+numero=int(input("Número positivo: ")) 
+while numero>=0: 
+    suma=sumaDigitos(numero) 
+    if suma > mayor: 
+          mayor=suma 
+          n_mayorsuma=numero 
+    if suma < 10: 
+        cantidad+=1 
+    numero=int(input("Número positivo: ")) 
+print("Sumatoria de dígitos de",n_mayorsuma,":",mayor) 
+print("Cantidad con sumatoria menor a 10:",cantidad) 
+#8
+def primo(num): 
+   for i in range(2,num): 
+       if num%i==0:            
+           return False 
+   return True 
+def frecuencia(numero,digito): 
+   cantidad=0 
+   while numero!=0: 
+       ultDigito=numero%10 
+       if ultDigito==digito: 
+           cantidad+=1 
+       numero=numero//10 
+   return cantidad 
+def factorial(numero): 
+   f=1 
+   if numero!=0: 
+       for i in range(1,numero+1): 
+           f=f*i 
+   return f
+def sumaDigitos(numero): 
+  suma=0 
+  while numero!=0: 
+      digito=numero%10 
+      suma=suma+digito 
+      numero=numero//10 
+  return suma 
+mayor=0 
+numero=int(input("Número primo: ")) 
+while primo(numero): 
+    print("Suma de los dígitos:",sumaDigitos(numero)) 
+    digito=int(input("Dígito: ")) 
+    print("El",digito,"aparece",frecuencia(numero,digito),"veces") 
+    if numero > mayor: 
+          mayor=numero 
+    numero=int(input("Número primo: ")) 
+print("Factorial de",mayor,":",factorial(mayor)) 
